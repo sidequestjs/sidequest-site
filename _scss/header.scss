@@ -1,0 +1,38 @@
+.header {
+    height: 65px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #2c2c2c;
+   
+    h2 {
+        margin: 0;
+        padding: 0;
+        margin-left: 10px;
+        height: 65px;
+        line-height: 65px;
+        display: inline-block;
+        font-size: 2em;
+        font-weight: 100;
+        color: #FCD116;
+    }
+
+    .logo {
+        height: 65px;
+        vertical-align: bottom;
+        display: inline-block;
+    }
+
+    .menu {
+        color: #FCD116;
+        line-height: 65px;
+        a {
+            line-height: 35px;
+            padding: 8px;
+            border-radius: 5px;
+            &:hover{
+                background-color: #3c3c3c
+            }
+        }
+
+    }
+}

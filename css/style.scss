@@ -1,0 +1,64 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+@import "header";
+@import "highlight.css" ;
+@import "fix-highlight" ;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+    background-color: #f6f6f6;
+}
+
+.container {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.pull-right {
+    float: right;
+}
+
+.brand {
+    height: 400px;
+    line-height: 400px;
+    background-color: #4a4a4a;
+    h1 {
+        color: #FCD116;
+        font-weight: 100;
+        font-size: 2em;
+        text-align: center;
+    }
+}
+
+.content {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #8B6508;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+h3 {
+    margin-top: 40px;
+    color: #8B6508;
+    font-size: 1em;
+    font-weight: 700;
+    text-align: left;
+}

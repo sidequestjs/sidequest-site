@@ -1,0 +1,44 @@
+<div class="getting-started">
+    <h2>Getting Started</h2>
+    Four steps to multi-process tasks:
+
+    <h3>1 - Install the sidequest dependency:</h3>
+
+    {% highlight text %}
+        npm install --save sidequest
+    {% endhighlight %}
+
+
+    <h3>2 - Create a task file:</h3>
+    {% highlight javascript %}
+    exports.task = () => {
+        console.log('Hello!');
+    }
+    {% endhighlight %}
+
+    <h3>3 - Register you task at <code class="highlighter-rouge">sidequest-config.json</code>:</h3>
+    {% highlight json %}
+    {
+        "tasks": [
+            {
+                "name": "Hello task every 2 seconds",
+                "path": "./path/to/hello.js",
+                "cron": "*/2 * * * * *"
+            },
+            {
+                "name": "Hello task every 5 seconds",
+                "path": "./path/to/hello.js",
+                "cron": "*/5 * * * * *"
+            },
+        ]
+    }
+    {% endhighlight %}
+    <h3>4 - Initialize sidequest in you app:</h3>
+    {% highlight javascript %}
+    const sidequest = require('sidequest');
+    
+    // ...
+    sidequest.initialize();
+    // ...
+    {% endhighlight %}
+</div>
