@@ -10,10 +10,13 @@ github_username:  sidequestjs
 
 # Build settings
 markdown: kramdown
+highlighter: rouge
 plugins:
   - jekyll-feed
 
-highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 sass:
     sass_dir: _scss

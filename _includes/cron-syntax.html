@@ -1,0 +1,126 @@
+<h2>Cron Syntax</h2>
+
+This is a quick reference to cron syntax and also shows the options supported by <a href="https://github.com/merencia/node-cron">node-cron</a>, the library used to task schaduling.
+
+<h3>Allowed fields</h3>
+
+{% highlight text %}
+┌────────────── second (optional)
+│ ┌──────────── minute
+│ │ ┌────────── hour
+│ │ │ ┌──────── day of month
+│ │ │ │ ┌────── month
+│ │ │ │ │ ┌──── day of week
+│ │ │ │ │ │
+│ │ │ │ │ │
+* * * * * *
+{% endhighlight %}
+
+<h3>Allowed values</h3>
+
+<table>
+    <tr>
+        <th>Field</th>
+        <th>Value</th>
+    </tr>
+    <tr>
+        <td>second</td>
+        <td>0-59</td>
+    </tr>
+    <tr>
+        <td>minute</td>
+        <td>0-59</td>
+    </tr>
+    <tr>
+        <td>hour</td>
+        <td>0-23</td>
+    </tr>
+    <tr>
+        <td>day of month</td>
+        <td>1-31</td>
+    </tr>
+    <tr>
+        <td>month</td>
+        <td>1-12 (or names)</td>
+    </tr>
+    <tr>
+        <td>day of week</td>
+        <td>0-7 (or names, 0 or 7 are sunday)</td>
+    </tr>
+</table>
+
+<h3>Using multiples values</h3>
+
+Runnin a task every second 1, 2, 10 and 14.
+{% highlight json %}
+{
+    "tasks": [
+        {
+            "name": "My task",
+            "path": "./path/to/my_task.js",
+            "cron": "1,2,10,14 * * * * *"
+        }
+    ]
+}
+{% endhighlight %}
+
+<h3>Using ranges</h3>
+
+Runnin a task from second 1 to 10.
+{% highlight json %}
+{
+    "tasks": [
+        {
+            "name": "My task",
+            "path": "./path/to/my_task.js",
+            "cron": "1-10 * * * * *"
+        }
+    ]
+}
+{% endhighlight %}
+
+
+<h3>Using step values</h3>
+
+Runnin every 2 seconds
+{% highlight json %}
+{
+    "tasks": [
+        {
+            "name": "My task",
+            "path": "./path/to/my_task.js",
+            "cron": "*/3 * * * * *"
+        }
+    ]
+}
+{% endhighlight %}
+
+
+<h3>Using names</h3>
+
+Scheduling a task to be performed every Sunday in January at 00:00.
+{% highlight json %}
+{
+    "tasks": [
+        {
+            "name": "My task",
+            "path": "./path/to/my_task.js",
+            "cron": "0 0 0 * January Sunday"
+        }
+    ]
+}
+{% endhighlight %}
+
+Or using short names.
+
+{% highlight json %}
+{
+    "tasks": [
+        {
+            "name": "My task",
+            "path": "./path/to/my_task.js",
+            "cron": "0 0 0 1 Jan Sun"
+        }
+    ]
+}
+{% endhighlight %}
