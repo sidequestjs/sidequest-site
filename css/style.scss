@@ -30,14 +30,32 @@ body {
 }
 
 .brand {
-    height: 400px;
-    line-height: 400px;
     background-color: #4a4a4a;
+    padding-top: 200px;
+    padding-bottom: 200px;
     h1 {
         color: #FCD116;
         font-weight: 100;
         font-size: 2em;
+        line-height: 4em;
         text-align: center;
+    }
+    .btn {
+        padding: 20px;
+        background-color: #FCD116;
+        display: block;
+        width: 200px;
+        text-align: center;
+        border-radius: 5px;
+        margin-left: auto;
+        margin-right: auto;
+        color: #4a4a4a;
+        text-decoration: none;
+
+        &:hover {
+            color: #2c2c2c;
+            background-color: #f5d235;
+        }
     }
 }
 
@@ -48,10 +66,22 @@ body {
     h1 {
         color: #8B6508;
         margin-top: 100px;
-        margin-bottom: 30px;
-        text-align: center;
-        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-align: left;
+        font-size: 2em;
         font-weight: 400;
+    }
+
+    h2 {
+        border-bottom: 1px solid #c0bbb0;
+        text-align: left;
+        padding-bottom: 20px;
+        margin-top: 50px;
+       
+        a {
+            color: #8B6508;
+            text-decoration: none;
+        }
     }
 }
 
