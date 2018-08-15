@@ -6,11 +6,26 @@ layout: default
 title: SideQuest
 ---
 
-{% include header.html%}
 {% include brand.html %}
-
-<div class="container content">
-    {% include why.html %}
-    {% include getting-started.html %}
-    {% include cron-syntax.html %}
+<div class="container">
+    <div class="pros">
+        <div>
+            <h2>Safe</h2>
+            <p>
+                Execute tasks in a isolated process, this prevents blocking I/O stops your main process.
+            </p>
+        </div>
+        <div>
+            <h2>Simple</h2>
+            <p>
+                Register your tasks and SideQuest will do all the task scheduling and process management. 
+            </p>
+        </div>
+        <div>
+            <h2>Versatile</h2>
+            <p>
+                SideQuest is extensible, it allows you to write your own plugins.
+            </p>
+        </div>
+    </div>
 </div>
