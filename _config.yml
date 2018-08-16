@@ -8,6 +8,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://sidequestjs.com" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sidequestjs
 github_project: sidequestjs/sidequest
+analytics_id: UA-40045005-5
 
 # Build settings
 markdown: kramdown
