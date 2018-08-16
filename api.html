@@ -1,0 +1,40 @@
+---
+layout: default
+title: API
+---
+
+<div class="container content">
+    <h1>API</h1>
+
+    <h2>Creating a Plugin</h2>
+
+    A SideQuest plugin is a object that has two functions, <code class="highlighter-rouge">initialize</code> and 
+    <code class="highlighter-rouge">terminate</code>, both of them receive the SideQuest
+    <code class="highlighter-rouge">MasterWorker</code>. This object may be watched and all the eventes are emited by it. 
+
+    <h3>Events</h3>
+
+    <h3>Plugin Example</h3>
+
+{% highlight javascript %}
+const sidequest = require('sidequest');
+
+let myPlugin = {
+    initialize: (masterWorker) => {
+        masterWorker.on('task-done', (task, result) => {
+            console.log(task, result);
+        });
+    }, 
+    terminate: (masterWorker) => {
+        //...
+    }
+}
+
+// add the plugin to sidequest
+sidequest.use(myPlugin);
+
+// initialize sidequest
+sidequest.initialize();
+{% endhighlight %}
+</div>
+
