@@ -3,6 +3,9 @@
     padding-top: 10px;
     padding-bottom: 10px;
     background: #2c2c2c;
+    a {
+        text-decoration: none;
+    }
    
     h2 {
         margin: 0;
@@ -20,6 +23,7 @@
         height: 65px;
         vertical-align: bottom;
         display: inline-block;
+
     }
 
     .menu {
