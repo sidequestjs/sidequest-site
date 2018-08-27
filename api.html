@@ -12,15 +12,6 @@ title: API
     <code>terminate</code>, both of them receive the SideQuest
     <code>MasterWorker</code>. This object may be watched and all the eventes are emited by it. 
 
-    <h3>Events</h3>
-
-    <ul>
-        <li><code>task-registred</code> is triggered when a task is registred in a scheduler.</li>
-        <li><code>task-started</code> is triggered when a task execution starts</li>
-        <li><code>task-done</code> is triggered when a task execution is done</li>
-        <li><code>task-error</code> is triggered when a task execution fails</li>
-    </ul>
-
     <h3>Plugin Example</h3>
 
 {% highlight javascript %}
@@ -43,5 +34,39 @@ sidequest.use(myPlugin);
 // initialize sidequest
 sidequest.initialize();
 {% endhighlight %}
+
+    <h3>Events</h3>
+
+    <ul>
+        <li><code>task-registred</code> is triggered when a task is registred in a scheduler. The callback is called receiving a task.</li>
+{% highlight javascript %}
+//... at my plugin
+masterWorker.on('task-registred', (task) => {
+    console.log(task);
+});
+{% endhighlight %}
+        <li><code>task-started</code> is triggered when a task execution starts. The callback is called receiving a task.</li>
+{% highlight javascript %}
+//... at my plugin
+masterWorker.on('task-started', (task) => {
+    console.log(task);
+});
+{% endhighlight %}
+        <li><code>task-done</code> is triggered when a task execution is done. The callback is called receiving a task and the result.</li>
+{% highlight javascript %}
+//... at my plugin
+masterWorker.on('task-done', (task, result) => {
+    console.log(task, result);
+});
+{% endhighlight %} 
+        <li><code>task-error</code> is triggered when a task execution fails. The callback is called receiving a task and the error</li>
+{% highlight javascript %}
+//... at my plugin
+masterWorker.on('task-error', (task, error) => {
+    console.log(task, error);
+});
+{% endhighlight %} 
+    </ul>
+
 </div>
 
